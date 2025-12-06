@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishnu & Prathiba - Wedding Invitation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .decorative-bg {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .decorative-bg2 {
+            position: absolute;
+            bottom: -70px;
+            left: -70px;
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ornament {
+            font-size: 40px;
+            color: #d4af37;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .ampersand {
+            font-size: 36px;
+            color: #d4af37;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .invite-text {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .details {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .detail-item {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .detail-label {
+            font-size: 14px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .detail-value {
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .venue {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 30px 0;
+        }
+
+        .actions {
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hearts {
+            font-size: 20px;
+            color: #e74c3c;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 25px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decorative-bg"></div>
+        <div class="decorative-bg2"></div>
+        
+        <div class="header">
+            <div class="ornament">✦</div>
+            <p class="invite-text" style="font-size: 16px; margin-bottom: 25px;">With the blessings of our parents and families,<br>we joyfully invite you to share in our special day</p>
+            <h1>Vishnu</h1>
+            <div class="ampersand">&</div>
+            <h1>Prathiba</h1>
+            <div class="hearts">♥ ♥ ♥</div>
+            <p class="invite-text">Request the honor of your presence as we begin our journey together in matrimony</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="details">
+            <div class="detail-item">
+                <div class="detail-label">Wedding Date</div>
+                <div class="detail-value">28th December 2025</div>
+            </div>
+
+            <div class="detail-item">
+                <div class="detail-label">Muhurtham</div>
+                <div class="detail-value">10:30 AM - 11:30 AM</div>
+            </div>
+
+            <div class="detail-item">
+                <div class="detail-label">Ceremony Venue</div>
+                <div class="venue">Kaimakunnath Kavu Bagavathi Kshethram<br>Mannur</div>
+            </div>
+
+            <div class="divider"></div>
+                        <div class="detail-item">
+                <div class="detail-label">Reception Date</div>
+                <div class="detail-value">28th December 2025</div>
+            </div>
+
+            <div class="detail-item">
+                <div class="detail-label">Time</div>
+                <div class="detail-value">4:00 PM - 8:00 PM</div>
+            </div>
+
+            <div class="detail-item">
+                <div class="detail-label">Reception Venue</div>
+                <div class="venue">Cheerans convention centre<br>Cheruthuruthy</div>
+            </div>
+           
+        </div>
+
+        <div class="actions">
+            <a href="https://maps.app.goo.gl/TPz2Jb9fvhsLsiVU7" class="btn btn-primary" target="_blank">
+                📍 Ceremony Location
+            </a>
+            
+            <a href="https://maps.app.goo.gl/4dbSNj2omMU7dFfv8" class="btn btn-primary" target="_blank">
+                📍 Reception Location
+            </a>
+
+            <div class="divider"></div>
+
+            <div class="contact-grid">
+                <a href="tel:8606095462" class="btn btn-secondary">
+                    📞 Call
+                </a>
+                <a href="tel:9745355674" class="btn btn-secondary">
+                    📞 Call
+                </a>
+            </div>
+
+            <a href="https://wa.me/918606095462" class="btn btn-primary" target="_blank">
+                💬 WhatsApp
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>We look forward to celebrating with you!</p>
+        </div>
+    </div>
+</body>
+</html>
